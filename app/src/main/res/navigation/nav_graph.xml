@@ -19,16 +19,8 @@
         android:name="co.sharif.namava.ui.main.fragments.detail.DetailFragment"
         android:label="fragment_detail"
         tools:layout="@layout/fragment_detail" >
-        <action
-            android:id="@+id/action_detailFragment_to_playFragment"
-            app:destination="@id/playFragment" />
         <argument
             android:name="argVideo"
             app:argType="co.sharif.namava.data.model.Datum" />
     </fragment>
-    <fragment
-        android:id="@+id/playFragment"
-        android:name="co.sharif.namava.ui.main.fragments.play.PlayFragment"
-        android:label="fragment_play"
-        tools:layout="@layout/fragment_play" />
 </navigation>
