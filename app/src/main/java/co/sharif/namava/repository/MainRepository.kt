@@ -9,4 +9,7 @@ class SearchRepository @Inject constructor(private val apiHelper: ApiHelper) {
 
     suspend fun getVideo(query:String) =
         apiHelper.getVideo(query)
+
+    suspend fun getVideo1(q:String) =
+        CallBackNet.apiCall { apiHelper.getVideo(q) }
 }
