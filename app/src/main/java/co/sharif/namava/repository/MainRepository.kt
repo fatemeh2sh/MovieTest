@@ -7,6 +7,6 @@ import javax.inject.Inject
 
 class SearchRepository @Inject constructor(private val apiHelper: ApiHelper) {
 
-    suspend fun getVideo1(query:String) =
+    suspend fun getVideo(query:String) =
         apiHelper.getVideo(query)
 }
