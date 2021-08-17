@@ -3,10 +3,14 @@ package co.sharif.namava.ui.play
 import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import co.sharif.namava.R
 import co.sharif.namava.databinding.ActivityPlayBinding
+import co.sharif.namava.utils.show
+import com.google.android.exoplayer2.ExoPlayer
 import com.google.android.exoplayer2.MediaItem
+import com.google.android.exoplayer2.Player
 import com.google.android.exoplayer2.SimpleExoPlayer
 import com.google.android.exoplayer2.util.MimeTypes
 import com.google.android.exoplayer2.util.Util
@@ -75,6 +79,7 @@ class PlayActivity : AppCompatActivity() {
             or View.SYSTEM_UI_FLAG_HIDE_NAVIGATION)
     }
 
+    //region override
     public override fun onStart() {
         super.onStart()
         if (Util.SDK_INT >= 24) {
@@ -104,5 +109,6 @@ class PlayActivity : AppCompatActivity() {
             releasePlayer()
         }
     }
+    //endregion
 
 }
