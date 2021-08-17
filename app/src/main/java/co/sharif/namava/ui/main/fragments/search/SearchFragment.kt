@@ -144,6 +144,7 @@ class SearchFragment : BaseFragment<SearchViewModel,FragmentSearchBinding>(),
 
     //endregion
 
+    //region util
     private fun setupRecyclerView() {
         mViewBindingFrag?.rvMovie?.layoutManager = LinearLayoutManager(this.requireContext())
     }
@@ -151,7 +152,7 @@ class SearchFragment : BaseFragment<SearchViewModel,FragmentSearchBinding>(),
     private fun showToast(message:String){
         Toast.makeText(this.requireContext(),message,Toast.LENGTH_SHORT).show()
     }
-
+    //endregion
 
     //region loading
     private fun showLoading(value:Boolean) {

@@ -69,7 +69,6 @@ class DetailFragment : BaseFragment<DetailViewModel, FragmentDetailBinding>(),Vi
                         this.putExtra("uri",argDetail.argVideo.link)
                         startActivity(this)
                     }
-              //  navController.navigate(R.id.action_detailFragment_to_playFragment)
             }
         }
     }
