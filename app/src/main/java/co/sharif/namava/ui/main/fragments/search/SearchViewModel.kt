@@ -2,21 +2,14 @@ package co.sharif.namava.ui.main.fragments.search
 
 import android.accounts.NetworkErrorException
 import android.content.Context
-import android.util.Log
 import androidx.hilt.lifecycle.ViewModelInject
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import androidx.paging.*
 import co.sharif.namava.data.model.Datum
-import co.sharif.namava.data.model.VideoModel
 import co.sharif.namava.repository.SearchRepository
-import co.sharif.namava.ui.base.BaseDataSourcePagination
 import co.sharif.namava.ui.base.BaseViewModel
 import co.sharif.namava.utils.networkHelper.ConnectionNet
-import co.sharif.namava.utils.networkHelper.ResultNet
 import dagger.hilt.android.qualifiers.ActivityContext
-import kotlinx.coroutines.launch
 
 class SearchViewModel @ViewModelInject constructor(
     @ActivityContext private val context: Context,
@@ -50,7 +43,7 @@ class SearchViewModel @ViewModelInject constructor(
                     return LoadResult.Page(data = responseData, prevKey = null, nextKey = null)
                 }
 
-                searchRepository.getVideo1(search)?.let {
+                searchRepository.getVideo(search)?.let {
                     total = it.body()?.total!!
                     per_page = it.body()?.per_page!!
                     count = total / per_page + 1
